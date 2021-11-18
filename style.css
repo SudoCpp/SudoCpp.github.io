@@ -10,7 +10,7 @@ body
     top: 0px;
     width: 100%;
     height: 50px;
-    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(0,0,0,1) 30%, rgba(69,74,75,1) 100%);
+    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 80%, rgba(30,30,30,1) 100%);
     color: #17bd11;
     font-size: 22pt;
     font-weight: bold;
@@ -23,7 +23,7 @@ body
     top: 50px;
     width: 100%;
     height: 25px;
-    background: #2c2b2b;
+    background: linear-gradient(45deg, #000000 0%, #000000 40%, #2c2b2b 100%);
     color: #17bd11;
     font-size: 12pt;
     font-family: 'Courier New', Courier, monospace;
