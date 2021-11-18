@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Raspberry PI OS Dev - SudoCpp</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="banner">
+            $ SudoCpp
+        </div>
+        <div id="projectsBar">
+            <a href="cp3m.html" class="barLink">Cpp Project Manager</a> | 
+            <a href="simplex.html" class="barLink">Simplex Toolkit</a> | 
+            <a href="raspOS.html" class="barLink">Raspberry PI OS Dev</a>
+        </div>
+        <div id="page"></div>
+        <div id="textPage">
+            <div id="textFrame">
+                <h2>Raspberry PI OS Dev</h2>
+                <p>
+                    I personally have not worked with developing an OS before, but why not learn.
+                    I imagined that when you flipped on a CPU it would start at the 0x0000 address
+                    and move forward. However, that doesn't appear to be the exact case.
+                </p>
+                <p>What I have written here will be based on what I've learned from other guides.
+                    Those guides are these:
+                </p>
+                <ul>
+                    <li><a href="https://wiki.osdev.org/Raspberry_Pi_Bare_Bones">Rasberry Pi Base Bones (wiki.osdev.org)</a></li>
+                    <li><a href="https://jsandler18.github.io/">Jake Sandler's Tutorial</a></li>
+                    <li><a href="https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.html">University of Cambridge's Computer Department's Tutorial</a></li>
+                </ul>
+                <p>
+                    When you link a normal program it is designed to be loaded into a specific address an run.
+                    Since this is an OS. Specifically an OS designed for Raspberry PI. The OS needs to be compiled
+                    for an ARM processor and it must be loaded at the address 0x8000 (for 32 bit). This is done
+                    with a linker script file.
+                </p>
+                <p>
+                    Historically operating systems were written in Assembly. The benefit of Assembly is that 
+                    there is full control over everything. With an OS you want to make sure you know what is in
+                    memory and where it is in memory. Along with the memory, every command is a one for one command
+                    for the CPU to run. However, Assembly is not very easy to read and with fewer and fewer programmers
+                    knowing assembly finding help is getting harder and harder. Lasly, all optimization is done by the
+                    programmer, and the compiler is combined work of several other people to optimize for you.
+                </p>
+                <p>
+                    With all that being said, Assembly is required to get the C/C++ environment set up. The environment
+                    requires that the stack pointer be set to the top of the stack and that the BSS section
+                    is defined. The stack will be set to 0x8000 and will work down toward 0x00. The kernel will
+                    start at 0x8000 and work upwards in memory. You can read up more on the BSS segment 
+                    <a href="https://en.wikipedia.org/wiki/.bss">here</a>, but basically when there is an object
+                    at the file level that isn't constant it needs a spot to live in memory and this is the spot.
+                </p>
+                <img src="images/KernelStackMem.png"/>
+                <p>
+                    In summary, the Raspberry PI bootloader looks for the kernel at 0x8000 and before we can use
+                    C or C++ we need to set up the environment which means the stack and also the BSS segment.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Simplex Toolkit - SudoCpp</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="banner">
+            $ SudoCpp
+        </div>
+        <div id="projectsBar">
+            <a href="cp3m.html" class="barLink">Cpp Project Manager</a> | 
+            <a href="simplex.html" class="barLink">Simplex Toolkit</a> | 
+            <a href="raspOS.html" class="barLink">Raspberry PI OS Dev</a>
+        </div>
+        <div id="page"></div>
+        <div id="textPage">
+            <div id="textFrame">
+                <h2>Simplex Toolkit</h2>
+                <p>
+                    The Simplex Toolkit is a set of C++ classes with the goals to make C++ development
+                    as easy as possible. Often the approach with C++ projects has become &quot;write 
+                    the parts that need to be fast in C/C++ and write the rest in something else&quot;.
+                    That approach does work, but how do you mesh the two together? COM? While there are 
+                    multiple solutions. The approach for the Simplex Toolkit is write everything in C++
+                    in a simle fashion and then if something is extermely speed crtical, just write that
+                    part the way you desire.
+                </p>
+                <h3>Goals</h3>
+                <ul>
+                    <li>Use a very object oriented approach.</li>
+                    <li>Make development as fast and easy as possible.</li>
+                    <li>Be lightweight.</li>
+                    <li>Automate memory management through RAII.</li>
+                </ul>
+                <h3>Usage Patterns</h3>
+                <ul>
+                    <li>Namespaces are all lowercase.</li>
+                    <li>Member functions/methods are camelCase (starting with lowercase)</li>
+                    <li>Classes are PascalCase (starting with uppercase)</li>
+                    <li>If a function calls for a pointer (*) it is taking over ownership. (You no longer need to free/delete it)</li>
+                    <li>If a function calls for a reference (&) ownership is not transferred.</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
