@@ -10,7 +10,7 @@ body
     top: 0px;
     width: 100%;
     height: 50px;
-    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 80%, rgba(30,30,30,1) 100%);
+    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(0,0,0,1) 200px, rgba(0,0,0,1) 80%, rgba(30,30,30,1) 100%);
     color: #17bd11;
     font-size: 22pt;
     font-weight: bold;
@@ -23,7 +23,7 @@ body
     top: 50px;
     width: 100%;
     height: 25px;
-    background: linear-gradient(45deg, #000000 0%, #000000 40%, #2c2b2b 100%);
+    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, #000000 220px, #111111 calc(10% + 220px), #111111 70%, rgba(0,0,0,1) calc(80% + 40px), rgba(30,30,30,1) 100%);
     color: #17bd11;
     font-size: 12pt;
     font-family: 'Courier New', Courier, monospace;
@@ -60,6 +60,12 @@ body
 }
 
 .barLink
+{
+    color: #17bd11;
+    text-decoration: none;
+}
+
+#logo
 {
     color: #17bd11;
     text-decoration: none;
