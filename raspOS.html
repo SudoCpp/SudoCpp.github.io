@@ -20,6 +20,8 @@
         </div>
         <div id="sidebar">
             <a href="raspOS.html" class="sideLink">Introduction</a><br>
+            <a href="raspParts.html" class="sideLink">Parts of a Tiny Kernel</a><br>
+            <a href="raspBoot.html" class="sideLink">boots.S File</a><br>
         </div>
         <div id="page"></div>
         <div id="textPage">
@@ -61,6 +63,11 @@
                     at the file level that isn't constant it needs a spot to live in memory and this is the spot.
                 </p>
                 <img src="images/KernelStackMem.png"/>
+                <p>
+                    Feel free to follow along. There are no promises that nothing will get broken. You can treat
+                    this "tutorial" of sorts as if it were software licensed under the BSD license. To follow 
+                    along exactly on this... journey. You will want a debian/ubuntu/Linux Mint distrubution.
+                </p>
                 <p>
                     In summary, the Raspberry PI bootloader looks for the kernel at 0x8000 and before we can use
                     C or C++ we need to set up the environment which means the stack and also the BSS segment.
