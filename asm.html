@@ -37,16 +37,8 @@
                     to the start address and then it will read in data on the data pins, looking for a command to execute.
                 </p>
                 <p>
-                    The CPU itself is extremely basic in its functionality. It will have some built in registers,
-                    which are basically like global variables that the entire processor uses. Math can be done with these.
-                    Then there are address pins that are used to refer to a specific RAM address and there are data pins 
-                    (data bus), that can either send bits out or read bits in. 
-                </p>
-                <p>
-                    Let's look at an example with the z80 processor, since you can still buy these and put them on a breadboard.
-                    When the process receives power it will set it's address pins to $0 and read in what it should do. Assuming
-                    that the address pins are connected to an EEPROM, the memory chip will send the first command to the z80,
-                    and then it will set the address pins to the address for $1. 
+                    In the case of an x86 computer there will be a BIOS (and/or UEFI). We will look into BIOS programming
+                    in this section.
                 </p>
             </div>
         </div>
