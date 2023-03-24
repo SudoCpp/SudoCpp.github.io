@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Getting Started - SudoCpp</title>
+        <link rel="stylesheet" href="../styles/sidebarStyle.css">
+    </head>
+    <body>
+        <div id="banner">
+            <a href="../index.html" id="logo">$ SudoCpp</a>
+        </div>
+        <div id="projectsBar">
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <a href="index.html" class="barLink">BIOS Programming</a>
+        </div>
+        <div id="sidebar">
+            <a href="index.html" class="sideLink">Introduction</a><br>
+            <a href="byte.html" class="sideLink">&nbsp;&nbsp;What is a Byte?</a><br>
+            <a href="gettingStarted.html" class="sideLink">&nbsp;&nbsp;Getting Started</a><br>
+            <a href="settingDisplay.html" class="sideLink">&nbsp;&nbsp;Setting Display</a><br>
+            <a href="displayingText.html" class="sideLink">&nbsp;&nbsp;Displaying Text</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">x86 Reference</a><br>
+            <a href="architecture.html" class="sideLink">&nbsp;&nbsp;Architecture</a><br>
+            <a href="instructions.html" class="sideLink">&nbsp;&nbsp;Instruction Set</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">BIOS Reference</a><br>
+            <a href="keycodes.html" class="sideLink">&nbsp;&nbsp;Key Codes</a><br>
+            <a href="videoModes.html" class="sideLink">&nbsp;&nbsp;Video Modes</a><br>
+        </div>
+        <div id="page"></div>
+        <div id="textPage">
+            <div id="textFrame">
+                <h2>Packages Required</h2>
+                <p>To follow along there are a few packages that we need to install. These commands will install everything
+                    you need.
+                </p>
+                <code>
+                    sudo apt install fasm qemu-system-x86
+                </code>
+                <p>fasm (Flat Assembler) is the assembler we will use and qemu is the emulator we will use so you don't need
+                    to actually write your data to a floppy disk and load it into a computer at boot up to test your changes.
+                </p>
+                <h2>Basic Framework for BIOS Programming</h2>
+                <p>For a program to be valid there are a are a couple things that we need in our program. We can start with a
+                    .asm file with following code.
+                </p>
+                <pre>
+                <code>
+    use16
+    org 0x7c00
+    ; code goes here
+    times 510 ($ - $$) db 0
+    dw 0xaa55
+                </code>
+                </pre>
+                <p>use16 means that we are using 16-bit real mode. Our origin point must be 0x7c00 for the program to run
+                    so we set this next. Then the next line will fill the file with 0's so that the 511th and 512th bytes
+                    are filled with the magic number "0xaa55".
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

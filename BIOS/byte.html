@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title>What is a Byte? - SudoCpp</title>
+        <link rel="stylesheet" href="../styles/sidebarStyle.css">
+    </head>
+    <body>
+        <div id="banner">
+            <a href="../index.html" id="logo">$ SudoCpp</a>
+        </div>
+        <div id="projectsBar">
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <a href="index.html" class="barLink">BIOS Programming</a>
+        </div>
+        <div id="sidebar">
+            <a href="index.html" class="sideLink">Introduction</a><br>
+            <a href="byte.html" class="sideLink">&nbsp;&nbsp;What is a Byte?</a><br>
+            <a href="gettingStarted.html" class="sideLink">&nbsp;&nbsp;Getting Started</a><br>
+            <a href="settingDisplay.html" class="sideLink">&nbsp;&nbsp;Setting Display</a><br>
+            <a href="displayingText.html" class="sideLink">&nbsp;&nbsp;Displaying Text</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">x86 Reference</a><br>
+            <a href="architecture.html" class="sideLink">&nbsp;&nbsp;Architecture</a><br>
+            <a href="instructions.html" class="sideLink">&nbsp;&nbsp;Instruction Set</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">BIOS Reference</a><br>
+            <a href="keycodes.html" class="sideLink">&nbsp;&nbsp;Key Codes</a><br>
+            <a href="videoModes.html" class="sideLink">&nbsp;&nbsp;Video Modes</a><br>
+        </div>
+        <div id="page"></div>
+        <div id="textPage">
+            <div id="textFrame">
+                <h2>Welcome</h2>
+                <p>
+                    When working with assembly understanding what a byte is, is very helpful. However, before we can get
+                    into bytes we need to cover a little number theory with binary and hexadecimal. Let's start with
+                    something familiar. The base-10, decimal, number system.
+                </p>
+                <h2>Decimal</h2>
+                <p>
+                    In our normal day to day lives we use the base-10 number system, which is called decimal. With the base
+                    ten number system we have a symbol to represent numbers zero through nine.
+                </p>
+                <p>0 is for zero</p>
+                <p>1 is for one</p>
+                <p>2 is for two</p>
+                <p>...</p>
+                <p>9 is for nine</p>
+                <p>When we get to the number ten (same as the base), we need to use two symbols (ie: 10).</p>
+                <h2>Hexadecimal</h2>
+                <p>When we looked at decimal there was no one symbol to represent the number ten. Now with hexadecimal, with
+                    base sixteen, we have no one symbol for sixteen, we do however need one symbol for all the numbers less than
+                    sixteen. Let's look at how we represent this.
+                </p>
+                <p>0 is for zero</p>
+                <p>1 is for one</p>
+                <p>2 is for two</p>
+                <p>...</p>
+                <p>9 is for nine</p>
+                <p>A is for ten</p>
+                <p>B is for eleven</p>
+                <p>C is for twelve</p>
+                <p>D is for thirteen</p>
+                <p>E is for fourteen</p>
+                <p>F is for fifteen</p>
+                <p>Again, when we get to the number sixteen (same as the base), we need to use two symbols (ie: 10).</p>
+                <h2>Binary</h2>
+                <p>This leads us to binary, which is base-2. If we look at the pattern with base-10, there was no one
+                    symbol for the number 10. With base-16, there was no one symbol for the number sixteen. With base-2,
+                    there is no one symbol to represent two.
+                </p>
+                <p>0 is for zero.</p>
+                <p>1 is for one.</p>
+                <p>Again, when we get to the number two (same as the base), we need to use two symbols (ie: 10). Let's count
+                    further.
+                </p>
+                <p>10 is for two.</p>
+                <p>11 is for three.</p>
+                <p>100 is for four.</p>
+                <p>101 is for five.</p>
+                <p>etc...</p>
+                <h2>About the Byte</h2>
+                <p>When we look at binary, all numbers can be represented as either a 1 or a 0, which when applied to switches
+                    the switch is either turned on or off. Each Binary digIT is called a bit. In a byte there are 8 bits.
+                    There are also nybbles, which is only 4 bits.
+                </p>
+                <p>There is another unique relationship with binary and hexadecimal. Each hexidecimal number represents one
+                    nybble. When working with assembly a number in binary is shown with a trailing "b". An example is 
+                    01b. With hexadecimal there is a trailing "h" or a "0x" in front. An example is 10h or 0x10. Ok, let's look
+                    at some examples of this.
+                </p>
+                <p>0000b is the same as 0x0</p>
+                <p>0001b is the same as 0x1</p>
+                <p>0010b is the same as 0x2</p>
+                <p>0011b is the same as 0x3</p>
+                <p>...</p>
+                <p>1000b is the same as 0x8</p>
+                <p>1001b is the same as 0x9</p>
+                <p>1010b is the same as 0xA (which is ten)</p>
+                <p>When we look at the worst case we have 1111b which is 0xF. As you can see all four bits can represent
+                    one hexadecimal digit.
+                </p>
+                <h2>Places</h2>
+                <p>In decimal we multiply and divide by 10 by moving the decimal place. For example 1000 / 10 is 100. This
+                    also happens with hexidecimal except that you multiply and divide by 16 and with binary you divide and
+                    multiply by 2.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

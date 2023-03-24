@@ -70,6 +70,12 @@ body
     text-decoration: none;
 }
 
+#logo:hover
+{
+    color: #21ff19;
+    text-decoration: none;
+}
+
 #sidebar
 {
     position: absolute;
@@ -83,6 +89,14 @@ body
 .sideLink
 {
     color: #17bd11;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.sideLink:hover
+{
+    color: #21ff19;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
