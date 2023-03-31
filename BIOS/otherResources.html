@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Getting Started - SudoCpp</title>
+        <title>Other Resources - SudoCpp</title>
         <link rel="stylesheet" href="../styles/sidebarStyle.css">
     </head>
     <body>
@@ -37,33 +37,10 @@
         <div id="page"></div>
         <div id="textPage">
             <div id="textFrame">
-                <h2>Packages Required</h2>
-                <p>To follow along there are a few packages that we need to install. These commands will install everything
-                    you need.
-                </p>
-                <code>
-                    sudo apt install fasm qemu-system-x86
-                </code>
-                <p>fasm (Flat Assembler) is the assembler we will use and qemu is the emulator we will use so you don't need
-                    to actually write your data to a floppy disk and load it into a computer at boot up to test your changes.
-                </p>
-                <h2>Basic Framework for BIOS Programming</h2>
-                <p>For a program to be valid there are a are a couple things that we need in our program. We can start with a
-                    .asm file with following code.
-                </p>
-                <pre>
-                <code>
-    use16
-    org 0x7c00
-    ; code goes here
-    times 510 - ($ - $$) db 0
-    dw 0xaa55
-                </code>
-                </pre>
-                <p>use16 means that we are using 16-bit real mode. Our origin point must be 0x7c00 for the program to run
-                    so we set this next. Then the next line will fill the file with 0's so that the 511th and 512th bytes
-                    are filled with the magic number "0xaa55".
-                </p>
+                <h2>Other places with BIOS documentation</h2>
+                <a href="https://stanislavs.org/helppc/">BIOS and Assembly Reference</a><br>
+                <a href="http://www.techhelpmanual.com/2-main_menu.html">Tech Help Manual</a><br>
+                <a href="http://www.ctyme.com/rbrown.htm">Ralph's List</a><br>
             </div>
         </div>
     </body>
