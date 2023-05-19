@@ -17,17 +17,23 @@
             <a href="index.html" class="barLink">BIOS Programming</a>
         </div>
         <div id="sidebar">
+            <a href="https://github.com/SudoCpp/Tutorial-Bios" class="sideLinkBlue">Follow along on GitHub</a><br><br>
             <a href="index.html" class="sideLink">Introduction</a><br>
             <a href="byte.html" class="sideLink">&nbsp;&nbsp;What is a Byte?</a><br>
             <a href="gettingStarted.html" class="sideLink">&nbsp;&nbsp;Getting Started</a><br>
             <a href="settingDisplay.html" class="sideLink">&nbsp;&nbsp;Setting Display</a><br>
             <a href="displayingText.html" class="sideLink">&nbsp;&nbsp;Displaying Text</a><br>
+            <a href="gettingKeys.html" class="sideLink">&nbsp;&nbsp;Getting Keys</a><br>
+            <a href="cursorPosition.html" class="sideLink">&nbsp;&nbsp;Set Cursor Position</a><br>
+            <a href="readWriteMemory.html" class="sideLink">&nbsp;&nbsp;Read/Write Memory</a><br>
+            <a href="coloredText.html" class="sideLink">&nbsp;&nbsp;Colored Text</a><br>
             <br>
             <a href="reference.html" class="sideLink">x86 Reference</a><br>
             <a href="architecture.html" class="sideLink">&nbsp;&nbsp;Architecture</a><br>
             <a href="instructions.html" class="sideLink">&nbsp;&nbsp;Instruction Set</a><br>
             <br>
             <a href="reference.html" class="sideLink">BIOS Reference</a><br>
+            <a href="ascii.html" class="sideLink">&nbsp;&nbsp;ASCII Table</a><br>
             <a href="keycodes.html" class="sideLink">&nbsp;&nbsp;Key Codes</a><br>
             <a href="videoModes.html" class="sideLink">&nbsp;&nbsp;Video Modes</a><br>
             <a href="videoServices.html" class="sideLink">&nbsp;&nbsp;Video Services</a><br>
@@ -64,7 +70,7 @@
                         <td width="20%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace"><b>Color</b></font></p>
                         </td>
-                        <td width="20%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
+                        <td width="20%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace"><b>Address</b></font></p>
                         </td>
                     </tr>
@@ -81,7 +87,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">Black & White</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB800</font></p>
                         </td>
                     </tr>
@@ -98,7 +104,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">16 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB800</font></p>
                         </td>
                     </tr>
@@ -115,7 +121,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">16 grays</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB800</font></p>
                         </td>
                     </tr>
@@ -132,7 +138,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">16 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB800</font></p>
                         </td>
                     </tr>
@@ -149,7 +155,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">4 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB800</font></p>
                         </td>
                     </tr>
@@ -166,7 +172,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">4 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB800</font></p>
                         </td>
                     </tr>
@@ -183,7 +189,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">Black & White</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xB000</font></p>
                         </td>
                     </tr>
@@ -200,7 +206,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">16 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xA000</font></p>
                         </td>
                     </tr>
@@ -217,7 +223,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">16 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xA000</font></p>
                         </td>
                     </tr>
@@ -234,7 +240,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">Black & White</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xA000</font></p>
                         </td>
                     </tr>
@@ -251,7 +257,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">No</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xA000</font></p>
                         </td>
 
@@ -269,7 +275,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">Yes</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xA000</font></p>
                         </td>
                     </tr>
@@ -286,7 +292,7 @@
                         <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="left">
                             <font face="Courier New, monospace">256 colors</font></p>
                         </td>
-                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
+                        <td width="20%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="left">
                             <font face="Courier New, monospace">0xA000</font></p>
                         </td>
                      </tr>

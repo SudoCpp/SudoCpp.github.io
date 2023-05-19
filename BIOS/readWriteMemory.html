@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <title>Reading and Writing Memory - SudoCpp</title>
+        <link rel="stylesheet" href="../styles/sidebarStyle.css">
+    </head>
+    <body>
+        <div id="banner">
+            <a href="../index.html" id="logo">$ SudoCpp</a>
+        </div>
+        <div id="projectsBar">
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <a href="index.html" class="barLink">BIOS Programming</a>
+        </div>
+        <div id="sidebar">
+            <a href="https://github.com/SudoCpp/Tutorial-Bios" class="sideLinkBlue">Follow along on GitHub</a><br><br>
+            <a href="index.html" class="sideLink">Introduction</a><br>
+            <a href="byte.html" class="sideLink">&nbsp;&nbsp;What is a Byte?</a><br>
+            <a href="gettingStarted.html" class="sideLink">&nbsp;&nbsp;Getting Started</a><br>
+            <a href="settingDisplay.html" class="sideLink">&nbsp;&nbsp;Setting Display</a><br>
+            <a href="displayingText.html" class="sideLink">&nbsp;&nbsp;Displaying Text</a><br>
+            <a href="gettingKeys.html" class="sideLink">&nbsp;&nbsp;Getting Keys</a><br>
+            <a href="cursorPosition.html" class="sideLink">&nbsp;&nbsp;Set Cursor Position</a><br>
+            <a href="readWriteMemory.html" class="sideLink">&nbsp;&nbsp;Read/Write Memory</a><br>
+            <a href="coloredText.html" class="sideLink">&nbsp;&nbsp;Colored Text</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">x86 Reference</a><br>
+            <a href="architecture.html" class="sideLink">&nbsp;&nbsp;Architecture</a><br>
+            <a href="instructions.html" class="sideLink">&nbsp;&nbsp;Instruction Set</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">BIOS Reference</a><br>
+            <a href="ascii.html" class="sideLink">&nbsp;&nbsp;ASCII Table</a><br>
+            <a href="keycodes.html" class="sideLink">&nbsp;&nbsp;Key Codes</a><br>
+            <a href="videoModes.html" class="sideLink">&nbsp;&nbsp;Video Modes</a><br>
+            <a href="videoServices.html" class="sideLink">&nbsp;&nbsp;Video Services</a><br>
+            <br>
+            <a href="otherResources.html" class="sideLink">Other Resources</a><br>
+        </div>
+        <div id="page"></div>
+        <div id="textPage">
+            <div id="textFrame">
+                <h2>Reading and Writing Memory</h2>
+                <h2>Memory</h2>
+                <p>The computer's memory (RAM) is important because it is where everything is stored for use during runtime, and I mean everything. While your
+                    program is running it is stored in the memory, all the variables you are using are stored in memory, and even what you see on the screen is
+                    saved in the video memory location. 
+                </p>
+                <h2>Reading Memory</h2>
+                <p>
+                    In previously tutorials we have read memory using a label to bookmark the address we cared about along with `lodsb`. `lodsb` which means
+                    "load string byte" is for loading a byte of data, we also have `lodsw` which means "load string word", and it is used for loading two bytes of data.
+                    The way that these instructions work is they will look at the address stored in `si` (string source index) and save the value into either `al` (lodsb),
+                    or into `ax` (lodsw). [Technically it is `ds:si` but `ds` is automatically set up for you in the BIOS, so we'll keep it simple.] After the value
+                    where `si` is pointing is read, it will increment `si` by 1 (lodsb) or 2 (lodsw) so that when you call it again, it will be looking at the next spot
+                    in the memory.
+                </p>
+                <p> Let's look at some example code:</p>
+                <pre>
+                    <code>
+    xor ax, ax              ; equivilent to `mov ax, 0` but faster
+    mov si, myDataLabel
+    lodsb                   ; `al` will now be 'A' and according to ascii `al` is 0x41
+    lodsb                   ; `al` will now be 'B' (ascii 0x42)
+                        
+myDataLabel:
+db "ABCD"
+                    </code>
+                </pre>
+                <p>Let's look at one more example of this, but this time we will use `lodsw` to see how it is different.</p>
+                <pre>
+                    <code>
+    xor ax, ax              ; equivilent to `mov ax, 0` but faster
+    mov si, myDataLabel
+    lodsw                   ; `ax` will now be 'AB' (ascii ax is 0x4142)
+    lodsw                   ; `ax` will now be 'CD' (ascii ax is 0x4344)
+                        
+myDataLabel:
+db "ABCD"
+                    </code>
+                </pre>
+                <h2>Writing Memory</h2>
+                <p>Using the instruction `stosb` (store string byte) and `stosw` (store string word) we are able to take what is in `al` and store it to the 
+                    memory location pointed at with `di` (string destination index). [Again technically, it is `es:di` but `es` is automatically set up for us.]
+                    Like the reading of memory, `stosw` will save the word stored in `ax` rather than just a byte. Once these operations of store are complete,
+                    it will automatically move `di` to point at the next address, either a byte of a word depending on which insturction you used.
+                </p>
+                <p> Let's look at some example code:</p>
+                <pre>
+                    <code>
+    mov ax, 0x4142          ; equivilent `ax` equals 'AB'
+    mov di, myDataLabel
+    stosb                   ; `al` is 0x42 which is the letter 'B', myDataLabel now is "B---"
+    stosb                   ; myDataLabel is now "BB--"
+                        
+myDataLabel:
+db "----"
+                    </code>
+                </pre>
+                <p>Let's look at one more example of this, but this time we will use `stosw` to see how it is different.</p>
+                <pre>
+                    <code>
+    mov ax, 0x4142          ; equivilent `ax` equals 'AB'   
+    mov di, myDataLabel
+    stosw                   ; myDataLabel now is "AB--"
+    stosw                   ; myDataLabel now is "ABAB"
+                        
+myDataLabel:
+db "----"
+                    </code>
+                </pre>
+                <p>Another use is for moving memory directly into the video memory to write things to the screen faster. In the case of video mode 3,
+                    the start address for the video memory is 0xB800, if we set `es` to 0xB800 we can set `di` to where on the screen we want to write 
+                    and write a word to that address. The first byte is the color information and the second byte is the character. 
+                    (This will be covered in more depth on the <a href="coloredText.html">Colored Text</a> page.)
+                </p>
+                <h2>Moving Memory</h2>
+                <p>The last instruction we will cover for memory is `movsb` and `movsw` which stand for "move string byte/word". It is equivilent to
+                    performing `lodsb` and then `stosb` or `lodsw` and then `stosw`. However, this will copy the memory directly so your `ax` register is
+                    uneffected.
+                </p>
+                <pre>
+                    <code>
+    mov si, source
+    mov di, destination
+    movsb                   ; destination is now "A---"
+    movsb                   ; destination is now "AB--"
+                        
+source:
+db "ABCD"
+
+destination:
+db "----"
+                    </code>
+                </pre>
+                <p>Let's look at one more example of this, but this time we will use `movsw` to see how it is different.</p>
+                <pre>
+                    <code>
+    mov si, source
+    mov di, destination
+    movsw                   ; destination is now "AB--"
+    movsw                   ; destination is now "ABCD"
+                        
+source:
+db "ABCD"
+
+destination:
+db "----"
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </body>
+</html>

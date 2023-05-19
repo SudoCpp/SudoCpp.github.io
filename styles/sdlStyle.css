@@ -11,10 +11,10 @@ body
     width: 100%;
     height: 50px;
     background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(0,0,0,1) 200px, rgba(0,0,0,1) 80%, rgba(30,30,30,1) 100%);
-    color: #17bd11;
+    color: #967afa;
     font-size: 22pt;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', sanserif;
 }
 
 #projectsBar
@@ -24,9 +24,9 @@ body
     width: 100%;
     height: 25px;
     background: linear-gradient(45deg, rgba(75,75,75,1) 0%, #000000 220px, #111111 calc(10% + 220px), #111111 70%, rgba(0,0,0,1) calc(80% + 40px), rgba(30,30,30,1) 100%);
-    color: #17bd11;
+    color: #967afa;
     font-size: 12pt;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', sanserif;
 }
 
 #page
@@ -59,9 +59,9 @@ body
 
 .barLink
 {
-    color: #17bd11;
+    color: #967afa;
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', sanserif;
 }
 
 #logo
@@ -81,39 +81,23 @@ body
     position: absolute;
     top: 75px;
     left: 0px;
-    width: 225px;
-    background: linear-gradient(90deg, rgba(75,75,75,1) 0%, #101010 223px, #000000 225px);
+    width: 200px;
+    background: linear-gradient(90deg, rgba(75,75,75,1) 0%, #101010 199px, #000000 200px);
     height: calc(100% - 75px);
 }
 
 .sideLink
 {
-    color: #17bd11;
+    color: #967afa;
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', sanserif;
     font-weight: bold;
 }
 
 .sideLink:hover
 {
-    color: #21ff19;
+    color: #c8bbf7;
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-.sideLinkBlue
-{
-    color: #2f71c7;
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-.sideLinkBlue:hover
-{
-    color: #19f7ff;
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', sanserif;
     font-weight: bold;
 }

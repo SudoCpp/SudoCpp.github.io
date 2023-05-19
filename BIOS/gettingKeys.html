@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Setting the Display - SudoCpp</title>
+        <title>Getting Keys - SudoCpp</title>
         <link rel="stylesheet" href="../styles/sidebarStyle.css">
     </head>
     <body>
@@ -43,50 +43,29 @@
         <div id="page"></div>
         <div id="textPage">
             <div id="textFrame">
-                <h2>Setting up the display</h2>
-                <p>Before we can show anything on the screen we need to set up the display. There are multiple display modes available and you can seem them by 
-                    clicking <a href="videoModes.html">here.</a>
-                </p>
-                <p>Let's look at video mode 0x3 as an example. This video mode supports color text at a resolution of 80 characters by 25 characters. There are some
-                    other details in the table that we will look at later but let's show an example of how to set this to video mode 0x3.
-                </p>
-                <pre>
-                    <code>
-    use16
-    org 0x7c00
-
-    mov ah, 0x0
-    mov al, 0x3
-    int 10h
-
-    510 times ($ - $$) db 0
-    0xaa55
-                    </code>
-                </pre>
-                <p>As you can see we are setting `ah` to 0x0. Interrupt 10h handles all our video needs. There is a table of commands that it will do and when
-                    `ah` is set to `0x0` it means set the display. Next, we are setting `al` to `0x3` which is our video mode 0x3. Last step is to call `int 10h`
-                    with triggers the video services to look at `ah` and `al` and do what we want them to do.
+                <h2>Getting User Keyboard Input</h2>
+                <p>Generally having user interaction make a program more useful than a program that just displays static data. To get user input we will be using
+                    a different interrupt than 10h, this time we will be using 16h.
                 </p>
                 <p>
-                    We are just beginning but there is actually a more efficient way of writing this. We can replace:
+                    The way subroutine `0` works, is that we store 0 into `ah`, and then we call int 16h. The system will wait for a key press and when it receives
+                    a key press it will set a value to `ah` and a value to `al`. These values can be found on the <a href="keycodes.html">key codes table</a>.
                 </p>
+                <p> Let's look at some example code:</p>
                 <pre>
                     <code>
     mov ah, 0x0
-    mov al, 0x3
-    int 10h
+    int 16h
+    cmp ah, 0x1c ;code for enter key
+    je keyIsEnter
+    cmp ah, 0x01 ;code for esc key
+    je keyIsEsc
+keyIsEnter:
+    ;enter logic here
+keyIsEsc:
+    ;escape logic here
                     </code>
                 </pre>
-                <p>with</p>
-                <pre>
-                    <code>
-    mov ax, 0x3
-    int 10h
-                    </code>
-                </pre>
-                <p>`ax` is a combination of `ah` and `al`. The high byte will (ah) will be set to 0x0, and the low byte (al) will be set to 0x3. By doing it this
-                    way our code will take up 3 bytes rather than 4 bytes.
-                </p>
             </div>
         </div>
     </body>

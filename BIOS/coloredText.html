@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>Colored Text - SudoCpp</title>
+        <link rel="stylesheet" href="../styles/sidebarStyle.css">
+    </head>
+    <body>
+        <div id="banner">
+            <a href="../index.html" id="logo">$ SudoCpp</a>
+        </div>
+        <div id="projectsBar">
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <a href="index.html" class="barLink">BIOS Programming</a>
+        </div>
+        <div id="sidebar">
+            <a href="https://github.com/SudoCpp/Tutorial-Bios" class="sideLinkBlue">Follow along on GitHub</a><br><br>
+            <a href="index.html" class="sideLink">Introduction</a><br>
+            <a href="byte.html" class="sideLink">&nbsp;&nbsp;What is a Byte?</a><br>
+            <a href="gettingStarted.html" class="sideLink">&nbsp;&nbsp;Getting Started</a><br>
+            <a href="settingDisplay.html" class="sideLink">&nbsp;&nbsp;Setting Display</a><br>
+            <a href="displayingText.html" class="sideLink">&nbsp;&nbsp;Displaying Text</a><br>
+            <a href="gettingKeys.html" class="sideLink">&nbsp;&nbsp;Getting Keys</a><br>
+            <a href="cursorPosition.html" class="sideLink">&nbsp;&nbsp;Set Cursor Position</a><br>
+            <a href="readWriteMemory.html" class="sideLink">&nbsp;&nbsp;Read/Write Memory</a><br>
+            <a href="coloredText.html" class="sideLink">&nbsp;&nbsp;Colored Text</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">x86 Reference</a><br>
+            <a href="architecture.html" class="sideLink">&nbsp;&nbsp;Architecture</a><br>
+            <a href="instructions.html" class="sideLink">&nbsp;&nbsp;Instruction Set</a><br>
+            <br>
+            <a href="reference.html" class="sideLink">BIOS Reference</a><br>
+            <a href="ascii.html" class="sideLink">&nbsp;&nbsp;ASCII Table</a><br>
+            <a href="keycodes.html" class="sideLink">&nbsp;&nbsp;Key Codes</a><br>
+            <a href="videoModes.html" class="sideLink">&nbsp;&nbsp;Video Modes</a><br>
+            <a href="videoServices.html" class="sideLink">&nbsp;&nbsp;Video Services</a><br>
+            <br>
+            <a href="otherResources.html" class="sideLink">Other Resources</a><br>
+        </div>
+        <div id="page"></div>
+        <div id="textPage">
+            <div id="textFrame">
+                <h2>Displaying Colored Text</h2>
+                <p>Video mode 3 also has the ability to display colored text.
+                </p>
+                <p>
+                    To do this we will not be using interrupts because we want to display informatino as fast as possible to the screen. Instead, we will
+                    be writing directly to the video memory. Memory addres for the various video modes can be found <a href="videoModes.html">here</a>. In 
+                    the case of mode 3h, we can see that it starts at address 0xB800.
+                </p>
+                <p>
+                    The other consideration that we have is the color. One byte is used for background and one byte is used for the foreground. Let's look
+                    at an example.
+                </p>
+                <table border=1>
+                    <tr>
+                        <td><b>Number</b></td>
+                        <td><b>Color</b></td>
+                        <td><b>Name</b></td>
+                        <td><b>Number</b></td>
+                        <td><b>Color</b></td>
+                        <td><b>Name</b></td>
+                    </tr>
+                    <tr>
+                        <td><center>0</center></td>
+                        <td bgcolor="black"></td>
+                        <td><center>Black</center></td>
+                        <td><center>8</center></td>
+                        <td bgcolor="darkgray"></td>
+                        <td><center>Dark Gray</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>1</center></td>
+                        <td bgcolor="blue"></td>
+                        <td><center>Blue</center></td>
+                        <td><center>9</center></td>
+                        <td bgcolor="#ADD8E6"></td>
+                        <td><center>Light Blue</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>2</center></td>
+                        <td bgcolor="green"></td>
+                        <td><center>Green</center></td>
+                        <td><center>A</center></td>
+                        <td bgcolor="lightgreen"></td>
+                        <td><center>Light Green</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>3</center></td>
+                        <td bgcolor="cyan"></td>
+                        <td><center>Cyan</center></td>
+                        <td><center>B</center></td>
+                        <td bgcolor="lightcyan"></td>
+                        <td><center>Light Cyan</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>4</center></td>
+                        <td bgcolor="red"></td>
+                        <td><center>Red</center></td>
+                        <td><center>C</center></td>
+                        <td bgcolor="#FF7F7F"></td>
+                        <td><center>Light Red</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>5</center></td>
+                        <td bgcolor="purple"></td>
+                        <td><center>Magenta</center></td>
+                        <td><center>D</center></td>
+                        <td bgcolor="magenta"></td>
+                        <td><center>Light Magenta</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>6</center></td>
+                        <td bgcolor="brown"></td>
+                        <td><center>Brown</center></td>
+                        <td><center>E</center></td>
+                        <td bgcolor="yellow"></td>
+                        <td><center>Yellow</center></td>
+                    </tr>
+                    <tr>
+                        <td><center>7</center></td>
+                        <td bgcolor="lightgray"></td>
+                        <td><center>Light Gray</center></td>
+                        <td><center>F</center></td>
+                        <td bgcolor="white"></td>
+                        <td><center>White</center></td>
+                    </tr>
+                </table>
+                <p> Let's look at some example code:</p>
+                <pre>
+                    <code>
+    mov ax, 0x3     ; set video mode to 3
+    int 10h
+
+    mov ax, 0xB800
+    mov es, ax      ; put 0xB800 into the extra segment
+    
+    xor di, di      ; fast way to set `di` to zero
+    mov ah, 0xF1    ; background to 0xF - white, foreground to 0x1 - blue
+    mov al, 'A'     ; letter to display 'A'
+    stosw           ; store word to memory address B800:0000 (es:di)
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </body>
+</html>
